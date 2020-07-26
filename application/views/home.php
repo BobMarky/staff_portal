@@ -33,10 +33,13 @@
                     <td>
                         <a href="<?php echo base_url("Welcome/edit/") . $d->staffId ?>">
                             <button class="btn btn-primary" title="Edit"><i class="fa fa-edit"></i></button>
-                        </a> |
-                        <a href="<?php echo base_url('Welcome/delete/')  . $d->staffId ?>" onclick="return confirm('Are you sure want to delete this staff ?')">
-                            <button class="btn btn-danger" title="Delete"><i class="fa fa-trash"></i></button>
                         </a>
+                        <?php if ($d->email != $username['username']) { ?>
+                            |
+                            <a href="<?php echo base_url('Welcome/delete/')  . $d->staffId ?>" onclick="return confirm('Are you sure want to delete this staff ?')">
+                                <button class="btn btn-danger" title="Delete"><i class="fa fa-trash"></i></button>
+                            </a>
+                        <?php } ?>
                     </td>
                 </tr>
             <?php } ?>

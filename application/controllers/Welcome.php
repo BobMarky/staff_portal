@@ -95,7 +95,10 @@ class Welcome extends CI_Controller
 
 	public function delete($id)
 	{
-		$this->admin->delete($id);
+		$staff = $this->admin->getDataById($id);
+		if ($staff->email != $this->session->userdata['user_logged']['username']) {
+			$this->admin->delete($id);
+		}
 		redirect(base_url('Welcome/home'));
 	}
 }
