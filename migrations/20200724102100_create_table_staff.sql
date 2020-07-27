@@ -8,3 +8,5 @@ CREATE TABLE `humanresource`.`staff` (
     `updated` TIMESTAMP on update CURRENT_TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ,
     PRIMARY KEY (`staffId`)
     ) ENGINE = InnoDB; 
+
+    INSERT INTO `staff` (`staffId`, `email`, `phone`, `password`, `position`, `created`, `updated`) VALUES (NULL, 'administrator@gmail.com', '081234532346', '$2y$10$FNTTCtkYedIbXVcORX5jc.SWF0zayMjA3nefgUzjk6aIkZNd2Vnfi', 'Administrator', current_timestamp(), current_timestamp()) 
